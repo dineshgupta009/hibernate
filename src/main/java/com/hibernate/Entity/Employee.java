@@ -19,8 +19,7 @@ public class Employee {
     private String department;
     private long salary;
 
-//    @OneToOne
-//    private Address address;
+
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinTable(name = "EMPLOYEE_ACCOUNT",
             joinColumns = {@JoinColumn(name = "EMPLOYEE_ID", referencedColumnName = "id")},
