@@ -5,6 +5,7 @@ import com.hibernate.Repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -14,8 +15,8 @@ public class EmployeeServiceImpl implements EmployeeService{
     private EmployeeRepository employeeRepository;
 
     @Override
-    public Optional<Employee> getEmployeeByfirstName(String firstName) {
-        Optional<Employee> employee= employeeRepository.findByfirstName(firstName);
+    public List<Employee> getEmployeeByfirstName(String firstName) {
+        List<Employee> employee= employeeRepository.findByfirstName(firstName);
         return employee;
     }
 }
